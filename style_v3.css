@@ -1,0 +1,779 @@
+/* ===================================
+   LISANDRO CACCIATORE - DATA ENGINEERING
+   Diseño UX: Trust & Clarity (B2B)
+   =================================== */
+
+/* --- VARIABLES (Sistema de Diseño) --- */
+:root {
+    /* Paleta: Oxford Blue & Slate Gray */
+    --primary-blue: #2563EB;        /* Azul de acción (Links/Botones) */
+    --primary-dark: #1E3A8A;        /* Azul Oxford (Profundidad) */
+    
+    /* Escala de Grises (Slate) - "Pizarra" */
+    --bg-white: #FFFFFF;
+    --bg-light: #F8FAFC;            /* Slate 50 */
+    --bg-soft: #F1F5F9;             /* Slate 100 */
+    
+    --text-dark: #0F172A;           /* Slate 900 (Casi negro) */
+    --text-body: #334155;           /* Slate 700 (Lectura óptima) */
+    --text-light: #64748B;          /* Slate 500 (Metadatos) */
+    
+    --border-light: #E2E8F0;        /* Slate 200 */
+    
+    /* Tipografía */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Montserrat', sans-serif; /* Solo para H1/H2 */
+    --font-mono: 'Fira Code', monospace;
+    
+    /* Espaciado & Layout */
+    --max-width: 1100px;            /* Ligeramente más angosto para lectura */
+    --border-radius: 6px;           /* Bordes menos redondeados (más serios) */
+    
+    --spacing-sm: 1rem;
+    --spacing-md: 2.5rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 8rem;
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-body);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: var(--font-main); /* H3 en Inter para mejor lectura técnica */
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.text-muted {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: var(--text-body);
+    max-width: 750px;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* --- UTILIDADES --- */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-gray {
+    background: var(--bg-light);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.section-accent {
+    background: #EFF6FF; /* Azul muy pálido */
+}
+
+.section-header-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+/* Badge: Ahora sólido y mate, no gradiente */
+.badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    margin-bottom: 1rem;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-light);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.logo .dot {
+    color: var(--primary-blue);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-body);
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    background: white;
+    overflow: hidden;
+}
+
+/* Grid de fondo muy sutil */
+.bg-grid {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--border-light) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 550px;
+}
+
+.image-frame {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BOTONES --- */
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px; /* Botones más cuadrados */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+/* Botón sólido, sin gradiente */
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-text {
+    color: var(--primary-blue);
+    font-weight: 600;
+    padding: 0;
+}
+
+.btn-text:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.btn-link {
+    color: var(--primary-blue);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* --- SERVICIOS (PROBLEMAS) --- */
+.problems-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Cards más sobrias */
+.problem-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.problem-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+}
+
+.problem-card strong {
+    display: block;
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.problem-card span {
+    font-size: 1rem;
+    color: var(--text-body);
+    display: block;
+}
+
+/* --- SOBRE MÍ / DIFERENCIAL --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.about-content ul li {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+/* --- PROYECTOS / CASOS --- */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.project-featured {
+    background: white;
+    padding: 0;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 3rem;
+}
+
+.project-featured:last-child {
+    border-bottom: none;
+}
+
+.project-meta {
+    margin-bottom: 1rem;
+}
+
+.project-type {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    background: #EFF6FF;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.tech-stack span {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-light);
+    background: var(--bg-soft);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* --- ACADEMIA (RECURSOS) --- */
+.academy-progression {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: center; /* Centrado si son pocos */
+}
+
+.level-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+    flex: 1;
+    min-width: 250px;
+    max-width: 320px;
+    text-align: center;
+}
+
+/* Badges de nivel monocolor para seriedad */
+.level-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: var(--text-dark);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.progression-arrow {
+    font-size: 1.5rem;
+    color: var(--border-light);
+    align-self: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+footer h2 {
+    color: white;
+}
+
+footer .btn-primary {
+    background: white;
+    color: var(--text-dark);
+}
+
+footer .btn-primary:hover {
+    background: var(--bg-light);
+    color: black;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-links a {
+    color: rgba(255,255,255,0.6);
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .hero-grid,
+    .about-grid,
+    .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .hero {
+        padding-top: 4rem;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    
+    .image-frame {
+        order: -1; /* Imagen arriba en móvil */
+        max-width: 100%;
+    }
+    
+    .academy-progression {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .progression-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* En producción agregarías un menú hamburguesa */
+    
+    .container { padding: 0 1.5rem; }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ===================================
+   ESTILOS BLOG & ARTÍCULOS
+   =================================== */
+
+/* --- BLOG INDEX (GRILLA) --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Grilla responsiva automática */
+    gap: 2.5rem;
+}
+
+.blog-card {
+    background: white;
+    padding: 2rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.08);
+    border-color: var(--primary-blue);
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+.card-meta .tag {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    background: var(--bg-soft);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.card-meta .date {
+    color: var(--text-light);
+}
+
+.blog-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.blog-card h3 a {
+    color: var(--text-dark);
+}
+
+.blog-card h3 a:hover {
+    color: var(--primary-blue);
+}
+
+.blog-card p {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Empuja el botón al fondo */
+}
+
+.read-more {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    margin-top: auto; /* Se pega al fondo de la card */
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* --- ARTÍCULO INDIVIDUAL (LAYOUT) --- */
+.article-container {
+    max-width: 720px; /* Ancho óptimo de lectura */
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+}
+
+.article-meta-row {
+    color: var(--text-light);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* --- TIPOGRAFÍA DE CONTENIDO (RICHTEXT) --- */
+.article-content {
+    font-size: 1.125rem; /* Un poco más grande para leer cómodo */
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+.article-content h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul, 
+.article-content ol {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* Estilo para código dentro del post */
+pre {
+    background: var(--bg-soft);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    border: 1px solid var(--border-light);
+    margin: 2rem 0;
+}
+
+code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: #D32F2F; /* Un color de acento para código inline */
+}
+
+pre code {
+    color: var(--text-dark); /* Color normal dentro de bloques */
+}
+
+/* Blockquote destacado */
+blockquote {
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    background: var(--bg-light);
+    padding: 1.5rem;
+}
+
+.lead {
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+/* Caja de llamada a la acción dentro del post */
+.cta-box {
+    background: #EFF6FF;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.cta-box h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* Ajustes Mobile Blog */
+@media (max-width: 768px) {
+    .article-header h1 {
+        font-size: 2rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+
+//* --- CONTENEDOR PRINCIPAL (Para centrar el grupo de etiquetas en la página) --- */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    justify-content: center; /* <--- ESTO centra las etiquetas en la pantalla */
+}
+
+/* --- EFECTO HOVER PARA TECH STACK --- */
+
+/* 1. Estado base (Apagado) */
+.tech-stack span {
+    /* Centrado interno del texto */
+    display: inline-flex;       /* Cambio a Flex para mejor centrado */
+    align-items: center;        /* Centrado Vertical */
+    justify-content: center;    /* Centrado Horizontal */
+    text-align: center;         /* Asegura centrado si el texto salta de línea */
+    
+    /* Dimensiones y estética */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: var(--bg-soft);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    border: 1px solid var(--border-light);
+    
+    /* Efecto "inactivo" */
+    color: var(--text-light);
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación un poco más fluida */
+    cursor: default;
+}
+
+/* 2. Estado Hover (Encendido) */
+.tech-stack span:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    
+    /* Paleta activa */
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background: white;
+    
+    /* Movimiento */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}

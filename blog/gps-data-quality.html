@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por qué tus datos de GPS son basura | Lisandro Cacciatore</title>
+    <link rel="stylesheet" href="../style_v3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#soluciones">Soluciones</a></li>
+                <li><a href="../blog.html">← Volver al Hub</a></li>
+                <li><a href="index.html#contacto" class="btn btn-primary">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <article class="article-container">
+            <header class="article-header">
+                <div class="badge">Data Quality</div>
+                <h1>Por qué tus datos de GPS son basura (y cómo limpiarlos)</h1>
+                <div class="article-meta-row">
+                    <span>12 Oct, 2024</span>
+                    <span>•</span>
+                    <span>8 min lectura</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p class="lead">Importar un CSV parece fácil hasta que intentas calcular el promedio de carga crónica y te das cuenta de que el 30% de tus datos son ceros que debían ser nulos.</p>
+
+                <h2>El problema de los "Ceros Falsos"</h2>
+                <p>En la mayoría de los software de GPS deportivos, cuando un jugador no entrena, el sistema a veces exporta un <code>0</code> en lugar de un <code>null</code> o celda vacía. Para una base de datos, 0 es un número. Es un dato.</p>
+                
+                <blockquote>
+                    "Si promedias la carga de un jugador incluyendo los días que estuvo enfermo (0 km), estás subestimando su capacidad real y arriesgando su vuelta al campo."
+                </blockquote>
+
+                <h3>Cómo detectarlo con Python</h3>
+                <p>Aquí tienes un script simple usando Pandas para auditar tu CSV antes de subirlo a BigQuery:</p>
+
+                <pre><code>import pandas as pd
+
+# Cargar datos
+df = pd.read_csv('export_gps.csv')
+
+# Verificar ceros en columnas clave
+zeros = df[df['Total Distance'] == 0].count()
+
+print(f"Filas con distancia cero: {zeros}")</code></pre>
+
+                <h3>La solución arquitectónica</h3>
+                <p>No limpies datos en Excel manualmente. Diseña un pipeline de ingestión que:</p>
+                <ul>
+                    <li>Detecte jugadores que no marcaron sesión.</li>
+                    <li>Transforme <code>0</code> a <code>null</code> si no hubo sesión activa.</li>
+                    <li>Genere una alerta si la calidad del dato baja del 95%.</li>
+                </ul>
+
+                <hr>
+                
+                <div class="cta-box">
+                    <h4>¿Tus datos históricos son un desastre?</h4>
+                    <p>Puedo ayudarte a auditar y limpiar tus bases de datos para recuperar información valiosa de temporadas pasadas.</p>
+                    <a href="../index.html#contacto" class="btn btn-primary">Hablemos de Data Cleaning</a>
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p class="copyright">© 2024 Lisandro Cacciatore</p>
+        </div>
+    </footer>
+
+</body>
+</html>
