@@ -777,3 +777,151 @@ blockquote {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
 }
+
+/* ===================================
+   SECCIÓN DE PRECIOS (PRICING)
+   =================================== */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: start; /* Para que no se estiren si tienen distinto contenido */
+    padding: 2rem 0;
+}
+
+.pricing-card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px -10px rgba(0,0,0,0.1);
+}
+
+/* Estilos para la tarjeta destacada (Centro) */
+.pricing-card.featured {
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.15);
+    transform: scale(1.02); /* Ligeramente más grande */
+    z-index: 2;
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.02) translateY(-5px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-blue);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+}
+
+/* Header de la tarjeta */
+.pricing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.plan-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.period {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.plan-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Lista de Features */
+.plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.plan-features li {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start; /* Para alinear el check si el texto es largo */
+}
+
+/* Botones específicos de pricing */
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-outline {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    border-color: var(--text-dark);
+    background: var(--bg-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+    .pricing-card.featured {
+        transform: none; /* Quitar escalado en móvil */
+        margin: 1rem 0; /* Separar un poco */
+    }
+}
