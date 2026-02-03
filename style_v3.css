@@ -925,3 +925,216 @@ blockquote {
         margin: 1rem 0; /* Separar un poco */
     }
 }
+
+/* ===================================
+   SECCIÓN DATA TOOLS & TEMPLATES
+   =================================== */
+
+/* Ajustes de Tipografía Específicos */
+.subtitle-tools {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--text-body);
+    margin-bottom: 2rem;
+}
+
+.value-prop-text {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: left; /* Lectura más cómoda que centrado para listas */
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+}
+
+.value-prop-list {
+    margin-top: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.value-prop-list li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* GRILLA DE HERRAMIENTAS */
+.tools-grid {
+    display: grid;
+    /* Desktop: 3 columnas, Tablet: 2, Mobile: 1 */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* CARD DE HERRAMIENTA */
+.tool-card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Para empujar el footer abajo */
+    height: 100%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Header de la Card */
+.tool-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.tool-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.tool-meta h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--text-dark);
+}
+
+.stack-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-light);
+    background: var(--bg-soft);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* Cuerpo de la Card */
+.tool-body {
+    flex-grow: 1; /* Esto hace que ocupe el espacio disponible */
+    margin-bottom: 1.5rem;
+}
+
+.tool-body p {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Footer de la Card (Precio + Botones) */
+.tool-footer {
+    border-top: 1px solid var(--bg-soft);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-tag {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.tool-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Botones Compactos */
+.btn-tool-primary, 
+.btn-tool-secondary {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-tool-primary {
+    background: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+}
+
+.btn-tool-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-tool-secondary {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-light);
+}
+
+.btn-tool-secondary:hover {
+    color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+/* BLOQUE PUENTE (BRIDGE) */
+.bridge-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px dashed var(--border-light); /* Separación sutil */
+    padding-top: 4rem;
+}
+
+.bridge-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bridge-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.btn-link-bridge {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.btn-link-bridge:hover {
+    border-bottom-color: var(--primary-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .value-prop-text {
+        padding: 1.5rem;
+    }
+    
+    .tool-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .tool-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .btn-tool-primary, .btn-tool-secondary {
+        flex: 1;
+        text-align: center;
+    }
+}
