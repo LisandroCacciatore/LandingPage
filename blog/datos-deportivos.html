@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Deportivos: Guía Completa de Calidad y Validación | Lisandro Cacciatore</title>
+    <meta name="description" content="Todo sobre calidad de datos en deporte de alto rendimiento: validación GPS, limpieza de CSVs Catapult, integración wellness y pipelines confiables.">
+    <link rel="stylesheet" href="../style_v3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../blog.html">← Knowledge Hub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="pillar-page-header">
+            <div class="container">
+                <span class="badge">Guía Maestra</span>
+                <h1>Datos Deportivos Confiables</h1>
+                <p class="intro-text" style="color: var(--text-body); margin: 2rem auto;">
+                    La diferencia entre un sistema de datos que funciona y uno 
+                    que genera decisiones erróneas está en 3 pilares: validación, 
+                    limpieza y automatización. Esta guía cubre todo.
+                </p>
+            </div>
+        </header>
+
+        <div class="container">
+            <nav class="pillar-toc">
+                <h2>En esta guía aprenderás:</h2>
+                <ul>
+                    <li><a href="#validacion">1. Validación GPS</a></li>
+                    <li><a href="#limpieza">2. Limpieza de CSVs</a></li>
+                    <li><a href="#integracion">3. Integración Wellness</a></li>
+                    <li><a href="#calidad">4. Métricas de Calidad</a></li>
+                </ul>
+            </nav>
+            
+            <section id="validacion" class="pillar-section">
+                <h2>1. Validación de datos GPS</h2>
+                <p class="lead">El 80% de los errores en ciencia deportiva ocurren antes de que los datos lleguen al software de análisis. Ocurren en la captura.</p>
+                <p>Importar un CSV parece fácil hasta que intentas calcular el promedio de carga crónica y te das cuenta de que el 30% de tus datos son ceros que debían ser nulos (jugadores que no entrenaron).</p>
+                
+                <div class="article-context" style="background: var(--bg-soft); padding: 1.5rem; border-left: 4px solid var(--primary-blue); margin: 2rem 0;">
+                    <strong>Lectura Profunda:</strong> 
+                    <a href="gps-data-quality.html" style="color: var(--primary-blue); font-weight: 600;">
+                        Por qué tus datos de GPS son basura (y cómo limpiarlos) →
+                    </a>
+                </div>
+            </section>
+            
+            <section id="limpieza" class="pillar-section">
+                <h2>2. Limpieza de CSVs (Catapult/Stats)</h2>
+                <p>Las exportaciones crudas de los dispositivos suelen traer formatos de fecha inconsistentes, caracteres especiales en nombres de jugadores y columnas duplicadas.</p>
+                <p>Automatizar la limpieza con Python (Pandas) no solo ahorra tiempo, sino que estandariza la nomenclatura para que "Lionel Messi" y "Messi, L." sean la misma entidad en tu base de datos.</p>
+                
+                <a href="#" class="btn-link">Ver tutorial de Pandas para PFs →</a>
+            </section>
+            
+            <section id="integracion" class="pillar-section">
+                <h2>3. Integración de Fuentes</h2>
+                <p>El valor real aparece cuando cruzas datos. Carga Externa (GPS) vs Carga Interna (RPE/Wellness). Para hacer esto, necesitas una llave primaria común (ID de Jugador) y una consistencia temporal impecable.</p>
+            </section>
+
+            <aside class="related-articles">
+                <h3>Recursos Relacionados</h3>
+                <ul>
+                    <li><a href="#">Template: Checklist de Validación Diaria</a></li>
+                    <li><a href="#">Script: Detector de Anomalías en Python</a></li>
+                    <li><a href="../index.html#tools">Herramienta: GPS Validator</a></li>
+                </ul>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer id="contacto">
+        <div class="container">
+            <p class="copyright">© 2024 Lisandro Cacciatore</p>
+        </div>
+    </footer>
+
+</body>
+</html>
