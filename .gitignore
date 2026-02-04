@@ -1,0 +1,12 @@
+
+# VS Code
+.vscode/
+
+# Temporales
+*.tmp
+*.bak
+~*
+
+# Sistema
+.DS_Store
+Thumbs.db

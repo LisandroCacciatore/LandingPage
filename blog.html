@@ -14,8 +14,7 @@
             <a href="index.html" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
             <ul class="nav-links">
                 <li><a href="index.html#soluciones">Soluciones</a></li>
-                <li><a href="blog.html" style="color: var(--primary-blue);">Knowledge Hub</a></li> 
-                <li><a href="index.html#contacto" class="btn btn-primary">Hablemos</a></li>
+                <li><a href="blog.html" style="color: var(--primary-blue);">Knowledge Hub</a></li> <li><a href="index.html#contacto" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Hablemos</a></li>
             </ul>
         </div>
     </nav>
@@ -32,85 +31,66 @@
         </section>
 
         <section class="container" style="padding: 4rem 0 6rem;">
-            
-            <div class="category-filters">
-                <button class="filter-btn active" data-category="all">Todos</button>
-                <button class="filter-btn" data-category="datos">Datos Deportivos</button>
-                <button class="filter-btn" data-category="automatizacion">Automatización</button>
-                <button class="filter-btn" data-category="arquitectura">Arquitectura</button>
-                <button class="filter-btn" data-category="dashboards">Dashboards</button>
-            </div>
-
-            <div class="blog-grid" id="blogGrid">
+            <div class="blog-grid">
                 
-                <article class="blog-card" data-category="arquitectura">
-                    <div class="card-meta">
-                        <span class="tag">Estrategia</span>
-                        <span class="date">Feb 04, 2026</span>
-                    </div>
-                    <h3><a href="blog/seo-aeo-geo.html">SEO vs AEO vs GEO: El futuro de la búsqueda</a></h3>
-                    <p>Ya no buscamos solo ranking, buscamos confianza. Cómo preparar tu contenido para Google, Siri y la IA.</p>
-                    <a href="blog/seo-aeo-geo.html" class="read-more">Leer artículo &rarr;</a>
-                </article>
-
-                <article class="blog-card" data-category="datos" style="border: 2px solid var(--primary-blue);">
-                    <div class="card-meta">
-                        <span class="tag" style="background: var(--primary-blue); color: white;">Guía Maestra</span>
-                        <span class="date">Recurso</span>
-                    </div>
-                    <h3><a href="blog/datos-deportivos.html">Guía Completa: Calidad de Datos Deportivos</a></h3>
-                    <p>La referencia definitiva sobre validación GPS, limpieza de Catapult y pipelines de datos confiables.</p>
-                    <a href="blog/datos-deportivos.html" class="read-more">Ver Guía Completa &rarr;</a>
-                </article>
-                
-                <article class="blog-card" data-category="datos">
+                <article class="blog-card">
                     <div class="card-meta">
                         <span class="tag">Data Quality</span>
                         <span class="date">Oct 12, 2024</span>
                     </div>
                     <h3><a href="blog/gps-data-quality.html">Por qué tus datos de GPS son basura (y cómo limpiarlos)</a></h3>
-                    <p>Un error común al importar CSVs de Catapult es ignorar los valores nulos. Aprende a validar el schema.</p>
+                    <p>Un error común al importar CSVs de Catapult es ignorar los valores nulos. Aprende a validar el schema antes de analizar.</p>
                     <a href="blog/gps-data-quality.html" class="read-more">Leer artículo &rarr;</a>
                 </article>
 
-                <article class="blog-card" data-category="automatizacion">
+                <article class="blog-card">
                     <div class="card-meta">
                         <span class="tag">Automation</span>
                         <span class="date">Sep 28, 2024</span>
                     </div>
                     <h3><a href="#">Dejando Excel: Tu primer bot de monitoreo con n8n</a></h3>
-                    <p>Tutorial paso a paso para conectar un Google Form a Telegram y avisar al PF cuando un jugador reporta dolor.</p>
+                    <p>Tutorial paso a paso para conectar un Google Form a Telegram y avisar al PF cuando un jugador reporta dolor muscular.</p>
                     <a href="#" class="read-more">Leer artículo &rarr;</a>
                 </article>
 
-                <article class="blog-card" data-category="arquitectura">
+                <article class="blog-card">
                     <div class="card-meta">
                         <span class="tag">Arquitectura</span>
                         <span class="date">Sep 15, 2024</span>
                     </div>
                     <h3><a href="#">SQL vs Excel: Cuándo la planilla se vuelve un riesgo</a></h3>
-                    <p>Analizamos el punto de quiebre donde una planilla compartida deja de ser útil y se convierte en deuda técnica.</p>
+                    <p>Analizamos el punto de quiebre donde una planilla compartida deja de ser útil y se convierte en una deuda técnica peligrosa.</p>
                     <a href="#" class="read-more">Leer artículo &rarr;</a>
                 </article>
 
-                <article class="blog-card" data-category="dashboards">
-                    <div class="card-meta">
-                        <span class="tag">Dashboards</span>
-                        <span class="date">Ago 30, 2024</span>
-                    </div>
-                    <h3><a href="blog/dashboards-que-no-responden.html">Por qué la mayoría de los dashboards deportivos no responden nada</a></h3>
-                    <p>El problema no es la visualización. Es la pregunta que nadie se hizo antes de diseñar el dashboard.</p>
-                    <a href="blog/dashboards-que-no-responden.html" class="read-more">Leer artículo &rarr;</a>
-                </article>
-
-                <article class="blog-card" data-category="dashboards" style="opacity: 0.6;">
+                <article class="blog-card">
                     <div class="card-meta">
                         <span class="tag">Dashboards</span>
                         <span class="date">Ago 30, 2024</span>
                     </div>
                     <h3><a href="#">El Dashboard Mudo: Por qué nadie mira tus reportes</a></h3>
-                    <p>Diseño de interfaces de datos. Cómo evitar llenar la pantalla de gráficos que no responden preguntas reales.</p>
-                    <a href="#" class="read-more">Próximamente &rarr;</a>
+                    <p>Diseño de interfaces de datos. Cómo evitar llenar la pantalla de gráficos que no responden ninguna pregunta real del DT.</p>
+                    <a href="#" class="read-more">Leer artículo &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="card-meta">
+                        <span class="tag">Code</span>
+                        <span class="date">Ago 10, 2024</span>
+                    </div>
+                    <h3><a href="#">Python para PFs: Pandas básico para limpiar CSVs</a></h3>
+                    <p>Snippets de código reutilizables para unir 50 archivos de sesión en un solo dataframe maestro en segundos.</p>
+                    <a href="#" class="read-more">Leer artículo &rarr;</a>
+                </article>
+
+                <article class="blog-card">
+                    <div class="card-meta">
+                        <span class="tag">Opinión</span>
+                        <span class="date">Jul 22, 2024</span>
+                    </div>
+                    <h3><a href="#">La mentira del Big Data en clubes chicos</a></h3>
+                    <p>No necesitas Big Data, necesitas Small Data confiable. Por qué deberías enfocarte en la calidad antes que en el volumen.</p>
+                    <a href="#" class="read-more">Leer artículo &rarr;</a>
                 </article>
 
             </div>
@@ -119,34 +99,8 @@
 
     <footer id="contacto">
         <div class="container">
-            <p class="copyright">© 2024 Lisandro Cacciatore</p>
+            <p class="copyright" style="margin-top: 0; border: none;">© 2024 Lisandro Cacciatore</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const blogCards = document.querySelectorAll('.blog-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remover clase active de todos
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Agregar active al clickeado
-                    btn.classList.add('active');
-
-                    const category = btn.getAttribute('data-category');
-
-                    blogCards.forEach(card => {
-                        if (category === 'all' || card.getAttribute('data-category') === category) {
-                            card.style.display = 'flex';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
