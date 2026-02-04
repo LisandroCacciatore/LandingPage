@@ -728,7 +728,7 @@ blockquote {
     }
 }
 
-/* --- CONTENEDOR PRINCIPAL (Para centrar el grupo de etiquetas en la página) --- */
+//* --- CONTENEDOR PRINCIPAL (Para centrar el grupo de etiquetas en la página) --- */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -1137,7 +1137,6 @@ blockquote {
         flex: 1;
         text-align: center;
     }
-<<<<<<< HEAD
 }
 
 /* ========================================================
@@ -1748,6 +1747,4 @@ blockquote {
 .problem-visual-card:hover .problem-stat::after {
     opacity: 1;
     transform: translateY(0);
-=======
->>>>>>> 463b52c73a4bc117abaa9b495ac47bc275e94c1b
 }

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Session QA Checklist – Training Data | Lisandro Cacciatore</title>
+    <meta name="description" content="Checklist de validación para datos de entrenamiento. Detecta errores antes de analizar, sin necesidad de código.">
+    
+    <link rel="stylesheet" href="../style_v3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#tools">← Volver a Tools</a></li>
+                <li><a href="../index.html#contacto" class="btn btn-primary">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="tool-detail">
+            <div class="container">
+
+                <header class="tool-header" style="max-width: 800px; margin: 0 auto 3rem;">
+                    <span class="badge">Data Tool</span>
+                    <h1>Session QA Checklist</h1>
+                    <p class="tool-subtitle" style="font-size: 1.25rem; color: var(--text-body); margin-top: 1rem;">
+                        Un checklist simple para validar datos de entrenamiento antes de sacar conclusiones.
+                    </p>
+                </header>
+
+                <div class="tool-body" style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; max-width: 1100px; margin: 0 auto;">
+                    
+                    <div class="tool-description">
+                        <h2>¿Qué problema resuelve?</h2>
+                        <p>
+                            La mayoría de los errores en dashboards deportivos no vienen del análisis, 
+                            sino de datos mal cargados: sesiones incompletas, valores duplicados o 
+                            métricas que nadie revisa.
+                        </p>
+
+                        <p>
+                            Este checklist te ayuda a detectar problemas comunes <strong>antes</strong> 
+                            de que lleguen a tus reportes o decisiones de campo.
+                        </p>
+
+                        <h2>¿Qué incluye?</h2>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.75rem;">✅ Checklist de validación por sesión de entrenamiento</li>
+                            <li style="margin-bottom: 0.75rem;">✅ Control de nulos, duplicados y outliers básicos</li>
+                            <li style="margin-bottom: 0.75rem;">✅ Separación clara entre error de carga y dato real</li>
+                            <li style="margin-bottom: 0.75rem;">✅ Guía corta de interpretación incluida</li>
+                            <li style="margin-bottom: 0.75rem;">✅ Template editable en Google Sheets</li>
+                        </ul>
+
+                        <h2>¿Para quién es?</h2>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.75rem;">📊 Entrenadores que reciben datos GPS/Catapult</li>
+                            <li style="margin-bottom: 0.75rem;">🏃 Preparadores físicos que trabajan con CSVs o exports</li>
+                            <li style="margin-bottom: 0.75rem;">⚽ Equipos deportivos sin analista de datos dedicado</li>
+                        </ul>
+
+                        <h2>Cómo funciona</h2>
+                        <p>
+                            El checklist está diseñado para usarse inmediatamente después de importar 
+                            tus datos de GPS, wellness o cualquier export de tu software de análisis.
+                        </p>
+
+                        <div style="background: var(--bg-soft); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h3 style="margin-top: 0; font-size: 1rem;">Proceso típico</h3>
+                            <ol style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+                                <li>Exportas tus datos desde Catapult/Stats/GPS</li>
+                                <li>Importas el CSV a Google Sheets</li>
+                                <li>Ejecutas el checklist de validación</li>
+                                <li>Revisas los 5 puntos críticos de calidad</li>
+                                <li>Solo entonces procedes al análisis o dashboard</li>
+                            </ol>
+                        </div>
+
+                        <h2>¿Qué <strong>no</strong> es?</h2>
+                        <p style="color: var(--text-muted);">
+                            No es un software complejo, ni requiere programación, ni reemplaza tu 
+                            análisis actual. Es simplemente un protocolo preventivo que te ahorra 
+                            tiempo corrigiendo errores después.
+                        </p>
+                    </div>
+
+                    <aside class="tool-cta" style="position: sticky; top: 100px; height: fit-content;">
+                        <div style="background: white; border: 2px solid var(--border-color); border-radius: 12px; padding: 2rem;">
+                            <p class="tool-price" style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin: 0 0 0.5rem 0;">USD 3</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0 0 1.5rem 0;">Pago único · Acceso inmediato</p>
+                            
+                            <a href="#" class="btn btn-primary" style="width: 100%; text-align: center; display: block; margin-bottom: 1rem;">Comprar checklist</a>
+                            
+                            <p class="tool-note" style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin: 1rem 0 0 0;">
+                                Google Sheet · Editable · Plug & Play
+                            </p>
+
+                            <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--border-color);">
+
+                            <div style="font-size: 0.9rem; color: var(--text-body);">
+                                <p style="margin: 0 0 0.75rem 0;"><strong>Incluye:</strong></p>
+                                <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.8;">
+                                    <li>Template de Google Sheets</li>
+                                    <li>Video tutorial (5 min)</li>
+                                    <li>Guía de interpretación PDF</li>
+                                    <li>Casos de ejemplo resueltos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-soft); border-radius: 8px;">
+                            <p style="font-size: 0.85rem; margin: 0; color: var(--text-muted);">
+                                <strong>¿Necesitas más control?</strong><br>
+                                Si querés automatizar completamente la validación de datos, 
+                                <a href="../index.html#contacto" style="color: var(--primary-blue);">hablemos de consultoría</a>.
+                            </p>
+                        </div>
+                    </aside>
+
+                </div>
+
+                <div style="max-width: 800px; margin: 4rem auto 0; padding-top: 3rem; border-top: 1px solid var(--border-color);">
+                    <h3>Preguntas frecuentes</h3>
+                    
+                    <details style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-soft); border-radius: 6px;">
+                        <summary style="cursor: pointer; font-weight: 600;">¿Funciona con cualquier software GPS?</summary>
+                        <p style="margin-top: 1rem; color: var(--text-body);">
+                            Sí. El checklist funciona con exports de Catapult, STATSports, Playertek, 
+                            o cualquier CSV que contenga datos de sesión. La lógica de validación es independiente del proveedor.
+                        </p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-soft); border-radius: 6px;">
+                        <summary style="cursor: pointer; font-weight: 600;">¿Necesito saber programación?</summary>
+                        <p style="margin-top: 1rem; color: var(--text-body);">
+                            No. Todo está en Google Sheets con fórmulas simples. Si sabés usar Excel, 
+                            podés usar esto sin problema.
+                        </p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-soft); border-radius: 6px;">
+                        <summary style="cursor: pointer; font-weight: 600;">¿Hay soporte incluido?</summary>
+                        <p style="margin-top: 1rem; color: var(--text-body);">
+                            El checklist incluye documentación completa y video tutorial. Para consultas 
+                            puntuales, podés escribirme directamente. Consultoría personalizada es aparte.
+                        </p>
+                    </details>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div class="container" style="text-align: center;">
+            <p class="copyright">© 2024 Lisandro Cacciatore</p>
+        </div>
+    </footer>
+
+</body>
+</html>

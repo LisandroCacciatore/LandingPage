@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Por qué tus datos de GPS son basura | Lisandro Cacciatore</title>
+    
+    <title>Por qué tus datos de GPS son basura (y cómo limpiarlos) | Lisandro Cacciatore</title>
+    <meta name="description" content="Un error común al importar CSVs de Catapult es ignorar los valores nulos. Aprende a validar el schema correctamente.">
+    
     <link rel="stylesheet" href="../style_v3.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Por qué tus datos de GPS son basura (y cómo limpiarlos)",
+      "description": "Un error común al importar CSVs de Catapult es ignorar los valores nulos. Aprende a validar el schema.",
+      "author": {
+        "@type": "Person",
+        "name": "Lisandro Cacciatore"
+      },
+      "datePublished": "2024-10-12",
+      "articleSection": "Data Quality"
+    }
+    </script>
 </head>
 <body>
 
@@ -13,62 +31,141 @@
         <div class="container nav-container">
             <a href="../index.html" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
             <ul class="nav-links">
-                <li><a href="index.html#soluciones">Soluciones</a></li>
                 <li><a href="../blog.html">← Volver al Hub</a></li>
-                <li><a href="index.html#contacto" class="btn btn-primary">Hablemos</a></li>
+                <li><a href="../index.html#contacto" class="btn btn-primary">Hablemos</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
         <article class="article-container">
+            
+            <nav class="breadcrumb" aria-label="breadcrumb">
+                <ol>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="datos-deportivos.html">Datos Deportivos</a></li>
+                    <li aria-current="page">GPS Data Quality</li>
+                </ol>
+            </nav>
+
             <header class="article-header">
                 <div class="badge">Data Quality</div>
                 <h1>Por qué tus datos de GPS son basura (y cómo limpiarlos)</h1>
                 <div class="article-meta-row">
-                    <span>12 Oct, 2024</span>
+                    <span>Oct 12, 2024</span>
                     <span>•</span>
-                    <span>8 min lectura</span>
+                    <span>6 min lectura</span>
                 </div>
             </header>
 
             <div class="article-content">
-                <p class="lead">Importar un CSV parece fácil hasta que intentas calcular el promedio de carga crónica y te das cuenta de que el 30% de tus datos son ceros que debían ser nulos.</p>
+                <p class="lead">
+                    Un error común al importar CSVs de Catapult es ignorar los valores nulos. 
+                    El problema no es que falten datos. Es que nadie valida el schema antes de analizar.
+                </p>
 
-                <h2>El problema de los "Ceros Falsos"</h2>
-                <p>En la mayoría de los software de GPS deportivos, cuando un jugador no entrena, el sistema a veces exporta un <code>0</code> en lugar de un <code>null</code> o celda vacía. Para una base de datos, 0 es un número. Es un dato.</p>
-                
+                <h2>El problema silencioso</h2>
+                <p>
+                    Tu software de GPS exporta un CSV. Lo abrís en Excel o lo importás directo 
+                    a tu dashboard. Todo parece funcionar. Pero hay un detalle que la mayoría ignora: 
+                    <strong>los valores faltantes no siempre aparecen como celdas vacías</strong>.
+                </p>
+
+                <p>
+                    Dependiendo de cómo esté configurado el export, un jugador que no entrenó 
+                    puede aparecer como:
+                </p>
+
+                <ul>
+                    <li><code>NULL</code> (correcto, pero raro en CSVs)</li>
+                    <li>Celda vacía (depende del software)</li>
+                    <li><code>0</code> (el más peligroso)</li>
+                    <li><code>N/A</code> o <code>-</code> (inconsistente entre exports)</li>
+                </ul>
+
+                <h2>Por qué importa</h2>
+                <p>
+                    Imaginá que estás calculando la carga crónica promedio de las últimas 4 semanas. 
+                    Si un jugador estuvo lesionado 2 semanas y su software pone <code>0</code> en vez de 
+                    <code>NULL</code>, tu promedio está diluyendo su carga real.
+                </p>
+
                 <blockquote>
-                    "Si promedias la carga de un jugador incluyendo los días que estuvo enfermo (0 km), estás subestimando su capacidad real y arriesgando su vuelta al campo."
+                    "Un cero no es lo mismo que un dato faltante. Uno dice 'no entrenó'. 
+                    El otro dice 'entrenó pero sin carga', lo cual es imposible."
                 </blockquote>
 
-                <h3>Cómo detectarlo con Python</h3>
-                <p>Aquí tienes un script simple usando Pandas para auditar tu CSV antes de subirlo a BigQuery:</p>
+                <h2>Validación básica del schema</h2>
+                
+                <h3>1. Identificar tipos de columnas</h3>
+                <p>
+                    Antes de importar, revisá que cada columna tenga el tipo de dato correcto:
+                </p>
+
+                <ul>
+                    <li><strong>Player Name / ID:</strong> Texto (String)</li>
+                    <li><strong>Date:</strong> Fecha (Date) — no texto</li>
+                    <li><strong>Total Distance, HSR, Sprints:</strong> Números (Float/Integer)</li>
+                    <li><strong>Session Type:</strong> Categoría (Enum o String limitado)</li>
+                </ul>
+
+                <h3>2. Detectar valores sospechosos</h3>
+                <p>Un script simple en Python puede detectar problemas:</p>
 
                 <pre><code>import pandas as pd
 
-# Cargar datos
-df = pd.read_csv('export_gps.csv')
+df = pd.read_csv('catapult_export.csv')
 
-# Verificar ceros en columnas clave
-zeros = df[df['Total Distance'] == 0].count()
+# Detectar ceros sospechosos
+suspicious_zeros = df[(df['Total Distance'] == 0) & (df['Duration'] > 0)]
+print(f"Sesiones con distancia 0 pero duración > 0: {len(suspicious_zeros)}")
 
-print(f"Filas con distancia cero: {zeros}")</code></pre>
+# Detectar valores nulos no marcados
+null_as_text = df[df['Player Name'].str.contains('null|NULL|N/A', na=False)]
+print(f"Valores nulos mal formateados: {len(null_as_text)}")</code></pre>
 
-                <h3>La solución arquitectónica</h3>
-                <p>No limpies datos en Excel manualmente. Diseña un pipeline de ingestión que:</p>
-                <ul>
-                    <li>Detecte jugadores que no marcaron sesión.</li>
-                    <li>Transforme <code>0</code> a <code>null</code> si no hubo sesión activa.</li>
-                    <li>Genere una alerta si la calidad del dato baja del 95%.</li>
-                </ul>
+                <h3>3. Normalizar antes de analizar</h3>
+                <p>
+                    Una vez detectados los problemas, normalizá los datos antes de pasarlos 
+                    a tu dashboard o análisis:
+                </p>
+
+                <pre><code># Convertir ceros sospechosos a NaN (pandas trata esto correctamente)
+df.loc[df['Total Distance'] == 0, 'Total Distance'] = pd.NA
+
+# Estandarizar nombres de jugadores
+df['Player Name'] = df['Player Name'].str.strip().str.title()</code></pre>
+
+                <h2>Checklist de validación diaria</h2>
+                <p>Antes de confiar en tus datos GPS, verificá:</p>
+
+                <ol>
+                    <li>✅ Que no haya jugadores con <code>Total Distance = 0</code> y duración > 0</li>
+                    <li>✅ Que las fechas estén en formato consistente (YYYY-MM-DD)</li>
+                    <li>✅ Que no haya nombres de jugadores duplicados con spelling diferente</li>
+                    <li>✅ Que las métricas críticas (HSR, Sprints) no tengan outliers sin explicación</li>
+                    <li>✅ Que el rango de valores sea razonable para tu deporte y nivel</li>
+                </ol>
 
                 <hr>
                 
                 <div class="cta-box">
-                    <h4>¿Tus datos históricos son un desastre?</h4>
-                    <p>Puedo ayudarte a auditar y limpiar tus bases de datos para recuperar información valiosa de temporadas pasadas.</p>
-                    <a href="../index.html#contacto" class="btn btn-primary">Hablemos de Data Cleaning</a>
+                    <h4>¿Querés automatizar la validación?</h4>
+                    <p>
+                        El Session QA Checklist incluye estos controles y más, 
+                        en un Google Sheet listo para usar sin código.
+                    </p>
+                    <a href="../tools/session-qa-checklist.html" class="btn btn-primary">Ver Session QA Checklist →</a>
+                </div>
+
+                <hr style="margin: 3rem 0;">
+
+                <div class="article-context" style="background: var(--bg-soft); padding: 1.5rem; border-left: 4px solid var(--primary-blue);">
+                    <strong>Recurso relacionado:</strong> 
+                    <a href="datos-deportivos.html" style="color: var(--primary-blue); font-weight: 600;">
+                        Guía Completa: Calidad de Datos Deportivos →
+                    </a>
                 </div>
 
             </div>

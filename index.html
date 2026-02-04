@@ -1,127 +1,243 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Ingeniería de datos, QA y automatización para instituciones deportivas. Transformo datos en decisiones confiables.">
-        <title>Lisandro Cacciatore | Sistemas de Datos Confiables</title>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="style_v3.css">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ingeniería de datos, QA y automatización para instituciones deportivas. Transformo datos en decisiones confiables.">
+    <title>Lisandro Cacciatore | Sistemas de Datos Confiables</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style_v3.css">
+</head>
+<body>
 
-        <nav class="navbar">
-            <div class="container nav-container">
-                <a href="#" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
-                <ul class="nav-links">
-                    <li><a href="#soluciones">Soluciones</a></li>
-                    <li><a href="#diferencial">Por qué yo</a></li>
-                    <li><a href="#casos">Casos Reales</a></li>
-                    <li><a href="#recursos">Academia</a></li>
-                    <li><a href="blog.html">Knowledge Hub</a></li>
-                    <li><a href="#contacto" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Hablemos</a></li>
-                </ul>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Lisandro Cacciatore <span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#casos">Casos Reales</a></li>
+                <li><a href="#recursos">Academia</a></li>
+                <li><a href="blog.html">Knowledge Hub</a></li>
+                <li><a href="#contacto" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Hablemos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="bg-grid"></div>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <span class="badge" style="background: var(--text-dark); color: white;">Ingeniería de Datos para Deporte de Alto Rendimiento</span>
+                        <h1 id="hero-heading">Datos GPS que confías.<br>Decisiones que <span style="color: var(--primary-blue);">funcionan.</span></h1>
+                        <p class="subtitle">
+                            Transformo tus planillas frágiles en sistemas automatizados 
+                            para cuerpos técnicos de fútbol profesional. 
+                            Sin vender humo. Con entregas en 4 semanas.
+                        </p>
+                        <div class="cta-group">
+                            <a href="#contacto" class="btn btn-primary">Diagnóstico técnico gratis (30 min)</a>
+                            <a href="#soluciones" class="btn btn-text">Ver casos reales &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="image-frame">
+                        <img src="img/Foto0A.jpg" alt="Lisandro Cacciatore - Data Engineering" class="img-fluid">
+                    </div>
+                </div>
             </div>
-        </nav>
+        </section>
 
-        <main>
-        <section class="hero">
-                <div class="bg-grid"></div>
-                <div class="container">
-                    <div class="hero-grid">
+        <section class="client-logos">
+            <div class="container">
+                <p class="logos-label">Confían en mi trabajo</p>
+                <div class="logos-grid">
+                    <span style="font-family: var(--font-heading); font-weight: 700; color: #cbd5e1;">CLUB A</span>
+                    <span style="font-family: var(--font-heading); font-weight: 700; color: #cbd5e1;">INSTITUCIÓN B</span>
+                    <span style="font-family: var(--font-heading); font-weight: 700; color: #cbd5e1;">FEDERACIÓN C</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-gray problems-visual" aria-labelledby="problemas-heading">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="badge">El Problema Real</span>
+      <h2 id="problemas-heading">Por qué los datos deportivos fallan en la práctica</h2>
+      <p class="text-muted">
+        El problema no es la tecnología. Es cómo se usa.
+      </p>
+    </div>
+
+    <div class="problems-grid-visual">
+
+      <article class="problem-visual-card">
+        <div class="problem-icon">🗂️</div>
+        <h3>Datos que entran sin control</h3>
+        <p>
+          CSVs, planillas o exports que se cargan “tal como vienen”.
+          Nulos, duplicados o errores de sesión que nadie revisa.
+        </p>
+        <span class="problem-stat hover-positive"
+              data-hover="Una base validada permite decisiones confiables.">
+          El problema no es el dashboard. Es la base.
+        </span>
+      </article>
+
+      <article class="problem-visual-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Reportes que llegan tarde</h3>
+        <p>
+          El informe se necesita hoy, pero depende de copias manuales
+          y pasos frágiles que se rompen fácil.
+        </p>
+        <span class="problem-stat hover-positive"
+              data-hover="Un flujo automatizado entrega el dato cuando importa.">
+          El problema no es la urgencia. Es el proceso.
+        </span>
+      </article>
+
+      <article class="problem-visual-card">
+        <div class="problem-icon">📊</div>
+        <h3>Dashboards que no responden</h3>
+        <p>
+          Gráficos correctos que no contestan lo que el entrenador
+          necesita decidir hoy.
+        </p>
+        <span class="problem-stat hover-positive"
+              data-hover="Un buen dashboard empieza por una pregunta clara.">
+          El problema no es el gráfico. Es la pregunta.
+        </span>
+      </article>
+
+      <article class="problem-visual-card">
+        <div class="problem-icon">🔥</div>
+        <h3>Excel compartido = riesgo</h3>
+        <p>
+          Múltiples ediciones, versiones cruzadas y ningún registro
+          de quién cambió qué.
+        </p>
+        <span class="problem-stat hover-positive"
+              data-hover="Un sistema con versiones evita errores invisibles.">
+          El problema no es Excel. Es la trazabilidad.
+        </span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+ 
+        <section id="soluciones" class="container problems-section">
+            <div class="section-header-center">
+                <h2>Lo que construyo</h2>
+                <p class="text-muted">Sistemas diseñados para operar bajo presión.</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <strong>1. Arquitectura de Datos</strong>
+                    <span>Diseño pipelines simples. Ordeno la captura, valido la entrada y centralizo la información en la nube (GCP) para que tengas una única fuente de verdad.</span>
+                </div>
+                <div class="problem-card">
+                    <strong>2. QA & Confiabilidad</strong>
+                    <span>Aplico mentalidad de tester a tu operación. Implemento validaciones automáticas para prevenir errores antes de que lleguen al entrenador.</span>
+                </div>
+                <div class="problem-card">
+                    <strong>3. Automatización de Flujos</strong>
+                    <span>Elimino la carga manual. Conecto tus herramientas (GPS, Wellness, Planillas) para que los reportes se generen solos y a tiempo.</span>
+                </div>
+                <div class="problem-card">
+                    <strong>4. Consultoría Deportiva</strong>
+                    <span>No solo soy técnico; entiendo el campo. Ayudo a cuerpos técnicos a estructurar métricas de carga y rendimiento con criterio fisiológico.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="diferencial" class="section-gray">
+            <div class="container">
+                <div class="about-grid">
+                    
+                    <div class="image-frame" style="max-width: 350px; margin: 0 auto;">
+                        <img src="img/Foto20.png" alt="Lisandro Cacciatore" class="img-fluid" style="filter: grayscale(20%);">
+                    </div>
+
+                    <div class="about-content">
+                        <span class="badge">El Diferencial</span>
+                        <h2>Vengo del campo, no del PowerPoint.</h2>
                         
-                        <div class="hero-content">
-                            <span class="badge" style="background: var(--text-dark); color: white;">Data Reliability Partner</span>
-                            <h1> Deja de improvisar.<br>Empieza a decidir con <span style="color: var(--primary-blue);">confianza.</span></h1>
-                            
-                            <p class="subtitle">
-                                Ayudo a organizaciones deportivas a transformar planillas frágiles en sistemas de datos robustos, auditables y automáticos. Sin humo técnico.
-                            </p>
-                            
-                            <div class="cta-group">
-                                <a href="#contacto" class="btn btn-primary">Analicemos tu caso</a>
-                                <a href="#soluciones" class="btn btn-text">Ver cómo funciona &rarr;</a>
+                        <p>Empecé diseñando entrenamientos donde un error significa una lesión, no un ticket en Jira.</p>
+                        
+                        <p>Hoy aplico esa misma rigurosidad a la ingeniería de datos:</p>
+                        
+                        <div class="value-points">
+                            <div class="value-point">
+                                <strong>🧪 Mentalidad de Tester</strong>
+                                <p>Todo dato debe ser validado antes de llegar al DT.</p>
+                            </div>
+                            <div class="value-point">
+                                <strong>⚙️ Sistemas que escalan</strong>
+                                <p>De 1 equipo a 10 divisiones sin reescribir código.</p>
+                            </div>
+                            <div class="value-point">
+                                <strong>🎯 Hablo como entrenador</strong>
+                                <p>La tecnología sirve a la decisión, no al revés.</p>
                             </div>
                         </div>
 
-                        <div class="image-frame">
-                            <img src="img/Foto0A.jpg" alt="Lisandro Cacciatore - Data Engineering" class="img-fluid">
-                        </div>
-
+                        <a href="https://www.linkedin.com/in/lisandrocacciatore/" class="btn-link">Ver mi perfil completo en LinkedIn &rarr;</a>
                     </div>
-                </div>
-            </section>
 
-            <section class="section-gray" style="padding: 4rem 0;">
-                <div class="container section-header-center">
-                    <p class="badge" style="background: transparent; color: var(--text-light); border: 1px solid var(--border-light);">Diagnóstico</p>
-                    <h2>La mayoría de las organizaciones tienen datos,<br>pero no confían en ellos.</h2>
-                    <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
-                        Toman decisiones tarde, dependen de procesos manuales que fallan y creen que un dashboard bonito solucionará un problema de raíz.
-                    </p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="soluciones" class="container problems-section">
-                <div class="section-header-center">
-                    <h2>Lo que construyo</h2>
-                    <p class="text-muted">Sistemas diseñados para operar bajo presión.</p>
+        <section class="container how-i-work">
+            <div class="section-header-center">
+                <h2>Resultados rápidos. Sin permanencia forzada.</h2>
+                <p class="text-muted">
+                    No te vendo un contrato de 12 meses. Te muestro valor en 4 semanas y vos decidís si seguimos.
+                </p>
+            </div>
+            
+            <div class="work-principles-grid">
+                
+                <div class="principle-card">
+                    <div class="principle-number">4 sem</div>
+                    <h3>Primera entrega funcional</h3>
+                    <p>Nada de "dame 6 meses para ver algo". Pipeline funcionando o reporte automatizado en menos de 30 días.</p>
                 </div>
                 
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <strong>1. Arquitectura de Datos</strong>
-                        <span>Diseño pipelines simples. Ordeno la captura, valido la entrada y centralizo la información en la nube (GCP) para que tengas una única fuente de verdad.</span>
-                    </div>
-                    <div class="problem-card">
-                        <strong>2. QA & Confiabilidad</strong>
-                        <span>Aplico mentalidad de tester a tu operación. Implemento validaciones automáticas para prevenir errores antes de que lleguen al entrenador.</span>
-                    </div>
-                    <div class="problem-card">
-                        <strong>3. Automatización de Flujos</strong>
-                        <span>Elimino la carga manual. Conecto tus herramientas (GPS, Wellness, Planillas) para que los reportes se generen solos y a tiempo.</span>
-                    </div>
-                    <div class="problem-card">
-                        <strong>4. Consultoría Deportiva</strong>
-                        <span>No solo soy técnico; entiendo el campo. Ayudo a cuerpos técnicos a estructurar métricas de carga y rendimiento con criterio fisiológico.</span>
-                    </div>
+                <div class="principle-card">
+                    <div class="principle-number">Tuyo</div>
+                    <h3>Construyo sobre lo que tenés</h3>
+                    <p>No tiro tu Excel. Lo evoluciono a una base de datos con validaciones. Cero disrupciones en plena temporada.</p>
                 </div>
-            </section>
-
-            <section id="diferencial" class="section-gray">
-                <div class="container">
-                    <div class="about-grid">
-                        
-                        <div class="image-frame" style="max-width: 350px; margin: 0 auto;">
-                            <img src="img/Foto20.png" alt="Lisandro Cacciatore" class="img-fluid" style="filter: grayscale(20%);">
-                        </div>
-
-                        <div class="about-content">
-                            <span class="badge">El Enfoque</span>
-                            <h2>Entiendo la operación, no solo la tecnología.</h2>
-                            
-                            <p>Vengo del rendimiento deportivo, no del PowerPoint. Empecé diseñando entrenamientos, donde un error significa una lesión, no un bug.</p>
-                            
-                            <p>Hoy aplico esa misma rigurosidad a la ingeniería de datos. Mi diferencial es simple:</p>
-                            
-                            <ul style="margin-top: 1rem; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                                <li>✅ <strong>Pienso como Tester:</strong> Todo dato debe ser validado.</li>
-                                <li>✅ <strong>Diseño como Ingeniero:</strong> Todo sistema debe escalar.</li>
-                                <li>✅ <strong>Hablo como Entrenador:</strong> La tecnología debe servir a la decisión.</li>
-                            </ul>
-
-                            <a href="https://www.linkedin.com/in/lisandrocacciatore/" class="btn-link">Ver mi perfil completo en LinkedIn &rarr;</a>
-                        </div>
-
-                    </div>
+                
+                <div class="principle-card">
+                    <div class="principle-number">Real</div>
+                    <h3>Sistemas en producción</h3>
+                    <p>Cero demos que quedan en un slide. Solo deploys que el staff técnico usa todos los días.</p>
                 </div>
-            </section>
+                
+                <div class="principle-card">
+                    <div class="principle-number">+Know</div>
+                    <h3>Tu equipo aprende</h3>
+                    <p>Documentación completa + transferencia de conocimiento. No dependés de mí después.</p>
+                </div>
+                
+            </div>
+        </section>
 
-            <section id="casos" class="container">
+        <section id="casos" class="section-accent" style="padding: 5rem 0;">
+            <div class="container">
                 <div class="section-header-center">
                     <h2>Ingeniería aplicada a resultados</h2>
                     <p class="text-muted">Proyectos donde el orden trajo claridad.</p>
@@ -129,275 +245,473 @@
                 
                 <div class="projects-list">
                     
-                    <article class="project-featured">
-                        <div class="project-meta">
-                            <span class="project-type">Infraestructura & Cloud</span>
-                        </div>
-                        <h3>De CSVs dispersos a BigQuery en 15 segundos</h3>
-                        <p><strong>El Caos:</strong> Un equipo profesional con meses de datos GPS históricos inútiles, dispersos en carpetas de Drive.</p>
-                        <p><strong>La Solución:</strong> Pipeline Serverless en Google Cloud. Al subir el archivo, se limpia, valida y centraliza automáticamente.</p>
-                        <p><strong>El Resultado:</strong> El cuerpo técnico pasó de no tener historia a visualizar tendencias de toda la temporada en tiempo real.</p>
-                        <div class="tech-stack">
-                            <span>Google Cloud</span>
-                            <span>BigQuery</span>
-                            <span>Looker Studio</span>
+                    <article class="project-featured" style="background: white; border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-light); padding: 0;">
+                        <article class="project-featured">
+    
+    <div class="project-image">
+        <img src="img/Banner02.png" alt="Pipeline automatizado BigQuery">
+    </div>
+    
+</article>
+                        
+                        <div class="project-content" style="padding: 2.5rem;">
+                            <div class="project-meta">
+                                <span class="project-type">Infraestructura & Cloud</span>
+                            </div>
+                            <h3>De CSVs dispersos a BigQuery en 15 segundos</h3>
+                            
+                            <div class="case-breakdown">
+                                <div class="case-stage">
+                                    <strong class="stage-label">⚠️ El Caos:</strong>
+                                    <p>Un equipo profesional con meses de datos GPS históricos inútiles, dispersos en carpetas de Drive.</p>
+                                </div>
+                                <div class="case-stage">
+                                    <strong class="stage-label">✅ La Solución:</strong>
+                                    <p>Pipeline Serverless en Google Cloud. Al subir el archivo, se limpia, valida y centraliza automáticamente.</p>
+                                </div>
+                                <div class="case-stage">
+                                    <strong class="stage-label">🎯 El Resultado:</strong>
+                                    <p>El cuerpo técnico pasó de no tener historia a visualizar tendencias de toda la temporada en tiempo real.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <span>Google Cloud</span>
+                                <span>BigQuery</span>
+                                <span>Looker Studio</span>
+                            </div>
                         </div>
                     </article>
 
-                    <article class="project-featured">
-                        <div class="project-meta">
-                            <span class="project-type">Automatización & QA</span>
-                        </div>
-                        <h3>Ahorro de 10hs semanales en monitoreo</h3>
-                        <p><strong>El Caos:</strong> Carga manual de datos de Wellness diarios vía WhatsApp. Errores de tipeo constantes.</p>
-                        <p><strong>La Solución:</strong> Bot inteligente con n8n que captura respuestas, alerta anomalías (QA) y notifica riesgos a Slack.</p>
-                        <p><strong>El Resultado:</strong> Cero carga manual. Detección temprana de fatiga garantizada antes de pisar el campo.</p>
-                        <div class="tech-stack">
-                            <span>n8n</span>
-                            <span>Slack API</span>
-                            <span>Webhooks</span>
+                    
+                    <article class="project-featured" style="background: white; border-radius: var(--border-radius); overflow: hidden; border: 1px solid var(--border-light); padding: 0;">
+                         <div class="project-image" style="background-color: #e2e8f0; height: 250px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+                            
+                            <div class="project-image">
+        <img src="img/Banner01.png" alt="Pipeline automatizado BigQuery">
+    </div>
+
+
+                            </div>
+
+                        <div class="project-content" style="padding: 2.5rem;">
+                            <div class="project-meta">
+                                <span class="project-type">Automatización & QA</span>
+                            </div>
+                            <h3>Ahorro de 10hs semanales en monitoreo</h3>
+                            
+                            <div class="case-breakdown">
+                                <div class="case-stage">
+                                    <strong class="stage-label">⚠️ El Caos:</strong>
+                                    <p>Carga manual de datos de Wellness diarios vía WhatsApp. Errores de tipeo constantes.</p>
+                                </div>
+                                <div class="case-stage">
+                                    <strong class="stage-label">✅ La Solución:</strong>
+                                    <p>Bot inteligente con n8n que captura respuestas, alerta anomalías (QA) y notifica riesgos a Slack.</p>
+                                </div>
+                                <div class="case-stage">
+                                    <strong class="stage-label">🎯 El Resultado:</strong>
+                                    <p>Cero carga manual. Detección temprana de fatiga garantizada antes de pisar el campo.</p>
+                                </div>
+                            </div>
+
+                            <div class="tech-stack">
+                                <span>n8n</span>
+                                <span>Slack API</span>
+                                <span>Webhooks</span>
+                            </div>
                         </div>
                     </article>
 
                 </div>
-            </section>
-
-            <section id="tools" class="section-gray">
-    <div class="container section-header-center">
-        <span class="badge">Marketplace Operativo</span>
-        <h2>Data Tools & Templates</h2>
-        <h3 class="subtitle-tools">Para entrenamiento, rendimiento y control de calidad.</h3>
-        
-        <div class="value-prop-text">
-            <p>Recursos listos para usar. Diseñados con criterio de ingeniería y lógica de campo.</p>
-            <ul class="value-prop-list">
-                <li>⛔ No son demos.</li>
-                <li>⛔ No son ejemplos "de juguete".</li>
-                <li>✅ Son herramientas que resuelven problemas reales.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="tools-grid">
-
-            <article class="tool-card">
-                <div class="tool-header">
-                    <div class="tool-icon">📊</div>
-                    <div class="tool-meta">
-                        <h4>Training Load Dashboard</h4>
-                        <span class="stack-badge">Looker Studio · Plug & Play</span>
-                    </div>
-                </div>
-                <div class="tool-body">
-                    <p>Visualizá carga semanal, ACWR y picos de intensidad sin romper el dataset histórico.</p>
-                </div>
-                <div class="tool-footer">
-                    <div class="price-tag">USD 5</div>
-                    <div class="tool-actions">
-                        <a href="#" class="btn-tool-secondary">Ver preview</a>
-                        <a href="#" class="btn-tool-primary">Comprar</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-header">
-                    <div class="tool-icon">🛡️</div>
-                    <div class="tool-meta">
-                        <h4>GPS Data Validator</h4>
-                        <span class="stack-badge">Google Sheets · Script</span>
-                    </div>
-                </div>
-                <div class="tool-body">
-                    <p>Detecta nulos, ceros falsos y duplicados en tu export CSV antes de que lleguen al análisis.</p>
-                </div>
-                <div class="tool-footer">
-                    <div class="price-tag">USD 3</div>
-                    <div class="tool-actions">
-                        <a href="#" class="btn-tool-secondary">Qué valida</a>
-                        <a href="#" class="btn-tool-primary">Comprar</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="tool-card">
-                <div class="tool-header">
-                    <div class="tool-icon">⚡</div>
-                    <div class="tool-meta">
-                        <h4>Wellness Bot (Telegram)</h4>
-                        <span class="stack-badge">n8n Template · JSON</span>
-                    </div>
-                </div>
-                <div class="tool-body">
-                    <p>Flujo completo para capturar RPE diario y alertar fatiga automáticamente al PF.</p>
-                </div>
-                <div class="tool-footer">
-                    <div class="price-tag">USD 7</div>
-                    <div class="tool-actions">
-                        <a href="#" class="btn-tool-secondary">Cómo funciona</a>
-                        <a href="#" class="btn-tool-primary">Comprar</a>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </div>
-
-<section id="planes" class="section-gray">
-    <div class="container">
-        <div class="section-header-center">
-            <h2>Modelos de Trabajo</h2>
-            <p class="text-muted">Deja de pagar por horas. Invierte en confiabilidad.</p>
-        </div>
-
-        <div class="pricing-grid">
-            
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="plan-name">Auditoría & Setup</h3>
-                    <div class="price">
-                        <span class="currency">US$</span>
-                        <span class="amount">450</span>
-                        <span class="period">/ pago único</span>
-                    </div>
-                    <p class="plan-desc">Ideal para iniciar. Ponemos la casa en orden antes de automatizar.</p>
-                </div>
-                <ul class="plan-features">
-                    <li>✅ Diagnóstico de flujo de datos</li>
-                    <li>✅ Limpieza histórica (1 temporada)</li>
-                    <li>✅ Detección de errores críticos</li>
-                    <li>✅ Reporte de deuda técnica</li>
-                </ul>
-                <a href="#contacto" class="btn btn-outline">Solicitar Auditoría</a>
             </div>
+        </section>
 
-            <div class="pricing-card featured">
-                <div class="popular-badge">Más Elegido</div>
-                <div class="pricing-header">
-                    <h3 class="plan-name">Data Guardian</h3>
-                    <div class="price">
-                        <span class="currency">US$</span>
-                        <span class="amount">250</span>
-                        <span class="period">/ mes</span>
-                    </div>
-                    <p class="plan-desc">Tu seguro de calidad. Validaciones automáticas todos los días.</p>
-                </div>
-                <ul class="plan-features">
-                    <li>✅ <strong>Monitoreo diario (Bot n8n)</strong></li>
-                    <li>✅ Alerta inmediata de errores (Slack/WPP)</li>
-                    <li>✅ Reporte semanal de salud de datos</li>
-                    <li>✅ Sin permanencia mínima</li>
-                    <li>✨ <i>Paz mental garantizada</i></li>
-                </ul>
-                <a href="#contacto" class="btn btn-primary btn-block">Asegurar mis datos</a>
-            </div>
-
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="plan-name">Fractional Engineer</h3>
-                    <div class="price">
-                        <span class="currency">US$</span>
-                        <span class="amount">900</span>
-                        <span class="period">/ mes</span>
-                    </div>
-                    <p class="plan-desc">Como tener un Ingeniero de Datos en tu staff, a una fracción del costo.</p>
-                </div>
-                <ul class="plan-features">
-                    <li>✅ Todo lo incluido en Data Guardian</li>
-                    <li>✅ <strong>4hs de desarrollo</strong> mensual</li>
-                    <li>✅ Mantenimiento de Dashboards</li>
-                    <li>✅ Reunión mensual de estrategia</li>
-                    <li>✅ Soporte prioritario</li>
-                </ul>
-                <a href="#contacto" class="btn btn-outline">Consultar disponibilidad</a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-    <div class="container bridge-container">
-        <div class="bridge-content">
-            <h3>¿Querés dejar de depender de templates?</h3>
-            <p>Estos recursos resuelven problemas puntuales. Si querés aprender a diseñar los tuyos —con tus datos, tus flujos y tus decisiones— armé una formación paso a paso.</p>
-            <a href="https://academy.lisandrocacciatore.com" class="btn-link-bridge">
-                👉 Aprender a construir mis propios sistemas
-            </a>
-        </div>
-    </div>
-</section>
-
-
-            <section id="recursos" class="section-accent">
-                <div class="container">
-                    <div class="content-narrow" style="text-align: center; margin-bottom: 3rem;">
-                        <h2>Formación y Recursos</h2>
-                        <p class="intro-text" style="font-size: 1rem;">
-                            Además de consultoría, capacito a profesionales para que dominen sus propias herramientas.
-                        </p>
-                    </div>
-
-                    <div class="academy-progression">
-                        <article class="level-card">
-                            <div class="level-badge level-1">Nivel 1</div>
-                            <h3>Spreadsheets Pro</h3>
-                            <p>Validación de datos y estructuras a prueba de errores humanos.</p>
-                        </article>
-                        <div class="progression-arrow">→</div>
-                        <article class="level-card">
-                            <div class="level-badge level-2">Nivel 2</div>
-                            <h3>SQL & Datos</h3>
-                            <p>Bases de datos relacionales para cuando el Excel no da más.</p>
-                        </article>
-                        <div class="progression-arrow">→</div>
-                        <article class="level-card">
-                            <div class="level-badge level-3">Nivel 3</div>
-                            <h3>Automatización</h3>
-                            <p>Bots y flujos con n8n para eliminar tareas repetitivas.</p>
-                        </article>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <a href="https://academy.lisandrocacciatore.com" class="btn btn-text">Ver oferta académica completa &rarr;</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="container" style="text-align: center; padding: 2rem 0;">
-                <p class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Stack Tecnológico</p>
-                <div class="tech-stack" style="justify-content: center; opacity: 0.6; filter: grayscale(100%);">
-                    <span>Google Cloud Platform</span>
-                    <span>SQL / BigQuery</span>
-                    <span>Python</span>
-                    <span>n8n</span>
-                    <span>Looker Studio</span>
-                    <span>Jira / Xray</span>
-                </div>
-            </section>
-
-        </main>
-
-        <footer id="contacto">
+        <section class="section-gray process-section">
             <div class="container">
-                <h2 style="font-size: 2rem;">Hablemos de tus datos.</h2>
-                <p style="opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;"> 
-                    Si querés dejar de apagar incendios y empezar a construir un sistema que respalde tus decisiones, agendemos una llamada corta.
-                </p>
-
-                <a href="mailto:contacto@lisandrocacciatore.com" class="btn btn-primary">Iniciar conversación</a>
-
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/lisandrocacciatore/" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/LisandroCacciatore">GitHub</a>
+                <div class="section-header-center">
+                    <span class="badge">Metodología</span>
+                    <h2>De la auditoría a la autonomía</h2>
+                    <p class="text-muted">
+                        Sin burocracia. Sin contratos eternos. 
+                        Con entregables concretos cada 2 semanas.
+                    </p>
                 </div>
                 
-                <p class="copyright">
-                    © 2024 Lisandro Cacciatore. <br>
-                    Diseñado con criterio. Ingeniería aplicada al deporte.
+                <div class="process-timeline">
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">01</div>
+                            <div class="step-duration">1 semana</div>
+                        </div>
+                        <h3>Diagnóstico técnico</h3>
+                        <p>Auditamos tu flujo de datos actual. Identificamos errores ocultos y cuellos de botella.</p>
+                        <ul class="step-deliverables">
+                            <li>✅ Mapa de infraestructura</li>
+                            <li>✅ Reporte de deuda técnica</li>
+                            <li>✅ Plan de prioridades</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">02</div>
+                            <div class="step-duration">1 semana</div>
+                        </div>
+                        <h3>Diseño de solución</h3>
+                        <p>Arquitectamos el sistema objetivo. Definimos tech stack y cronograma realista.</p>
+                        <ul class="step-deliverables">
+                            <li>✅ Diagrama de arquitectura</li>
+                            <li>✅ Timeline por milestone</li>
+                            <li>✅ Presupuesto detallado</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">03</div>
+                            <div class="step-duration">2-4 semanas</div>
+                        </div>
+                        <h3>Implementación iterativa</h3>
+                        <p>Construimos en sprints de 2 semanas. Deploys frecuentes, sin disrupciones.</p>
+                        <ul class="step-deliverables">
+                            <li>✅ Código en producción</li>
+                            <li>✅ Demos cada 2 semanas</li>
+                            <li>✅ Ajustes sobre feedback</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">04</div>
+                            <div class="step-duration">Continuo</div>
+                        </div>
+                        <h3>Transferencia y soporte</h3>
+                        <p>Tu equipo aprende a mantener el sistema. Documentación completa + training.</p>
+                        <ul class="step-deliverables">
+                            <li>✅ Documentación técnica</li>
+                            <li>✅ Training del staff</li>
+                            <li>✅ Handoff controlado</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#contacto" class="btn btn-primary">Empezar mi diagnóstico gratis</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="planes" class="container" style="padding: 5rem 0;">
+            <div class="section-header-center">
+                <h2>Modelos de Trabajo</h2>
+                <p class="text-muted">Deja de pagar por horas. Invierte en confiabilidad.</p>
+            </div>
+
+            <div class="pricing-grid">
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Auditoría & Setup</h3>
+                        <div class="price">
+                            <span class="currency">US$</span>
+                            <span class="amount">450</span>
+                            <span class="period">/ pago único</span>
+                        </div>
+                        <p class="plan-desc">Ideal para iniciar. Ponemos la casa en orden antes de automatizar.</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✅ Diagnóstico de flujo de datos</li>
+                        <li>✅ Limpieza histórica (1 temporada)</li>
+                        <li>✅ Detección de errores críticos</li>
+                        <li>✅ Reporte de deuda técnica</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Solicitar Auditoría</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Más Elegido</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Data Guardian</h3>
+                        <div class="price">
+                            <span class="currency">US$</span>
+                            <span class="amount">250</span>
+                            <span class="period">/ mes</span>
+                        </div>
+                        <p class="plan-desc">Tu seguro de calidad. Validaciones automáticas todos los días.</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✅ <strong>Monitoreo diario (Bot n8n)</strong></li>
+                        <li>✅ Alerta inmediata de errores</li>
+                        <li>✅ Reporte semanal de salud</li>
+                        <li>✅ Sin permanencia mínima</li>
+                        <li>✨ <i>Paz mental garantizada</i></li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary btn-block">Asegurar mis datos</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Fractional Engineer</h3>
+                        <div class="price">
+                            <span class="currency">US$</span>
+                            <span class="amount">900</span>
+                            <span class="period">/ mes</span>
+                        </div>
+                        <p class="plan-desc">Como tener un Ingeniero de Datos en tu staff, a una fracción del costo.</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✅ Todo lo incluido en Data Guardian</li>
+                        <li>✅ <strong>4hs de desarrollo</strong> mensual</li>
+                        <li>✅ Mantenimiento de Dashboards</li>
+                        <li>✅ Reunión mensual de estrategia</li>
+                        <li>✅ Soporte prioritario</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Consultar disponibilidad</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="servicios" class="container" style="padding: 6rem 0;">
+            <div class="section-header-center">
+                <span class="badge">Servicios</span>
+                <h2>Transformar datos en decisiones claras</h2>
+                <p class="text-muted">
+                    No dashboards genéricos. Sistemas pensados para entrenar mejor.
                 </p>
             </div>
-        </footer>
 
-    </body>
-    </html>
+            <div class="tools-grid" style="margin-top: 3rem;">
+
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-meta">
+                            <h4>Análisis de rendimiento mensual</h4>
+                            <span class="stack-badge">Dashboard + Informe escrito</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p>Dashboard vivo + informe escrito con insights prácticos para entrenadores y cuerpos técnicos.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.25rem; line-height: 1.8;">
+                            <li>Métricas de carga y progresión individualizadas</li>
+                            <li>Comparaciones internas por posición y fase</li>
+                            <li>Lectura clara, sin tecnicismos innecesarios</li>
+                            <li>Reunión mensual de revisión incluida</li>
+                        </ul>
+                    </div>
+                    <div class="tool-footer">
+                        <div class="price-tag">Desde USD 200/mes</div>
+                        <div class="tool-actions">
+                            <a href="#contacto" class="btn-tool-primary">Consultar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card" style="border: 2px solid var(--primary-blue);">
+                    <div class="tool-header">
+                        <div class="tool-icon">⚙️</div>
+                        <div class="tool-meta">
+                            <h4>Setup de sistema de datos</h4>
+                            <span class="stack-badge" style="background: var(--primary-blue); color: white;">Más solicitado</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p>Diseño e implementación del flujo completo: carga → validación → análisis → visualización.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.25rem; line-height: 1.8;">
+                            <li>Modelo de datos adaptado a tu operación</li>
+                            <li>Automatización de imports y validaciones</li>
+                            <li>Capacitación al staff técnico incluida</li>
+                            <li>Documentación completa del sistema</li>
+                        </ul>
+                    </div>
+                    <div class="tool-footer">
+                        <div class="price-tag">One-off · A medida</div>
+                        <div class="tool-actions">
+                            <a href="#contacto" class="btn-tool-primary">Agendar llamada</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">⚡</div>
+                        <div class="tool-meta">
+                            <h4>Automatización y escalado</h4>
+                            <span class="stack-badge">Integración + Bots</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p>Para equipos que quieren ahorrar tiempo y reducir errores operativos en la gestión de datos.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.25rem; line-height: 1.8;">
+                            <li>Alertas automáticas de carga y fatiga</li>
+                            <li>Reportes generados sin intervención manual</li>
+                            <li>Integraciones con Sheets / Apps / Telegram</li>
+                            <li>Monitoreo de calidad de datos continuo</li>
+                        </ul>
+                    </div>
+                    <div class="tool-footer">
+                        <div class="price-tag">A medida</div>
+                        <div class="tool-actions">
+                            <a href="#contacto" class="btn-tool-primary">Ver opciones</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="tools" class="section-gray">
+            <div class="container section-header-center">
+                <span class="badge">Marketplace Operativo</span>
+                <h2>Data Tools & Templates</h2>
+                <h3 class="subtitle-tools">Para entrenamiento, rendimiento y control de calidad.</h3>
+                
+                <div class="value-prop-text">
+                    <p>Recursos listos para usar. Diseñados con criterio de ingeniería y lógica de campo.</p>
+                    <ul class="value-prop-list">
+                        <li>⛔ No son demos.</li>
+                        <li>⛔ No son ejemplos "de juguete".</li>
+                        <li>✅ Son herramientas que resuelven problemas reales.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="tools-grid">
+
+                    <article class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">📊</div>
+                            <div class="tool-meta">
+                                <h4>Training Load Dashboard</h4>
+                                <span class="stack-badge">Looker Studio · Plug & Play</span>
+                            </div>
+                        </div>
+                        <div class="tool-body">
+                            <p>Visualizá carga semanal, ACWR y picos de intensidad sin romper el dataset histórico.</p>
+                        </div>
+                        <div class="tool-footer">
+                            <div class="price-tag">USD 5</div>
+                            <div class="tool-actions">
+                                <a href="#" class="btn-tool-secondary">Ver preview</a>
+                                <a href="#" class="btn-tool-primary">Comprar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">🛡️</div>
+                            <div class="tool-meta">
+                                <h4>Session QA Checklist</h4>
+                                <span class="stack-badge">Google Sheets · Plug & Play</span>
+                            </div>
+                        </div>
+                        <div class="tool-body">
+                            <p>Checklist de validación para detectar nulos, ceros falsos y duplicados antes del análisis.</p>
+                        </div>
+                        <div class="tool-footer">
+                            <div class="price-tag">USD 3</div>
+                            <div class="tool-actions">
+                                <a href="tools/session-qa-checklist.html" class="btn-tool-secondary">Ver detalles</a>
+                                <a href="#" class="btn-tool-primary">Comprar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon">⚡</div>
+                            <div class="tool-meta">
+                                <h4>Wellness Bot (Telegram)</h4>
+                                <span class="stack-badge">n8n Template · JSON</span>
+                            </div>
+                        </div>
+                        <div class="tool-body">
+                            <p>Flujo completo para capturar RPE diario y alertar fatiga automáticamente al PF.</p>
+                        </div>
+                        <div class="tool-footer">
+                            <div class="price-tag">USD 7</div>
+                            <div class="tool-actions">
+                                <a href="#" class="btn-tool-secondary">Cómo funciona</a>
+                                <a href="#" class="btn-tool-primary">Comprar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="bridge-container">
+                    <div class="bridge-content">
+                        <h3>¿Querés dejar de depender de templates?</h3>
+                        <p>Estos recursos resuelven problemas puntuales. Si querés aprender a diseñar los tuyos —con tus datos, tus flujos y tus decisiones— armé una formación paso a paso.</p>
+                        <a href="https://academy.lisandrocacciatore.com" class="btn-link-bridge">
+                            👉 Aprender a construir mis propios sistemas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="recursos" class="section-accent">
+            <div class="container">
+                <div class="content-narrow" style="text-align: center; margin-bottom: 3rem;">
+                    <h2>Formación y Recursos</h2>
+                    <p class="intro-text" style="font-size: 1rem;">
+                        Además de consultoría, capacito a profesionales para que dominen sus propias herramientas.
+                    </p>
+                </div>
+
+                <div class="academy-progression">
+                    <article class="level-card">
+                        <div class="level-badge level-1">Nivel 1</div>
+                        <h3>Spreadsheets Pro</h3>
+                        <p>Validación de datos y estructuras a prueba de errores humanos.</p>
+                    </article>
+                    <div class="progression-arrow">→</div>
+                    <article class="level-card">
+                        <div class="level-badge level-2">Nivel 2</div>
+                        <h3>SQL & Datos</h3>
+                        <p>Bases de datos relacionales para cuando el Excel no da más.</p>
+                    </article>
+                    <div class="progression-arrow">→</div>
+                    <article class="level-card">
+                        <div class="level-badge level-3">Nivel 3</div>
+                        <h3>Automatización</h3>
+                        <p>Bots y flujos con n8n para eliminar tareas repetitivas.</p>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://academy.lisandrocacciatore.com" class="btn btn-text">Ver oferta académica completa &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="text-align: center; padding: 2rem 0;">
+            <p class="text-muted" style="font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">Stack Tecnológico</p>
+            <div class="tech-stack" style="justify-content: center; opacity: 0.6; filter: grayscale(100%);">
+                <span>Google Cloud Platform</span>
+                <span>SQL / BigQuery</span>
+                <span>Python</span>
+                <span>n8n</span>
+                <span>Looker Studio</span>
+                <span>Jira / Xray</span>
+            </div>
+        </section>
+
+
+    </main>
+    
+    <footer id="contacto">
+        <div class="container">
+            <h2>Hablemos de tus datos.</h2>
+            <p>Si querés dejar de apagar incendios y empezar a construir un sistema que respalde tus decisiones.</p>
+            <a href="/cdn-cgi/l/email-protection#3f5c50514b5e5c4b507f53564c5e515b4d505c5e5c5c565e4b504d5a115c5052" class="btn btn-primary">Iniciar conversación</a>
+            <p class="copyright">© 2024 Lisandro Cacciato
