@@ -1655,3 +1655,96 @@ blockquote {
         overflow-x: auto;
     }
 }
+
+.problem-stat {
+  color: #6b7280; /* gris actual */
+  transition: color 0.2s ease;
+  position: relative;
+  cursor: default;
+}
+
+.problem-stat.hover-positive:hover {
+  color: #16a34a; /* verde */
+}
+
+/* --- ESTILOS BASE DE LA TARJETA --- */
+.problem-visual-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-light);
+    text-align: center;
+    transition: all 0.3s ease;
+    /* Necesario para que el contenido se mueva suave */
+    position: relative; 
+}
+
+/* 1. Efecto HOVER en la TARJETA COMPLETA (Se ilumina) */
+.problem-visual-card:hover {
+    border-color: #22c55e; /* Borde Verde */
+    box-shadow: 0 10px 30px -5px rgba(34, 197, 94, 0.15); /* Sombra Verde suave */
+    transform: translateY(-5px);
+}
+
+/* --- ESTILOS DEL BADGE DE ESTADÍSTICA/MENSAJE --- */
+
+/* 2. Estado NORMAL (Rojo / Problema) */
+.problem-stat {
+    display: inline-flex; /* Flex para centrar el contenido absoluto luego */
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Clave para el truco del texto */
+    
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    
+    /* Colores Rojos por defecto */
+    color: #DC2626; 
+    background: #FEE2E2;
+    
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: default;
+    
+    /* Aseguramos que el ancho no colapse al cambiar texto */
+    min-width: 200px; 
+}
+
+/* 3. El texto alternativo (Oculto por defecto) */
+.problem-stat::after {
+    content: attr(data-hover); /* Toma el texto del HTML */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Centrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Estado inicial invisible */
+    opacity: 0;
+    transform: translateY(5px); /* Pequeño efecto de entrada */
+    transition: all 0.3s ease;
+    
+    /* Color Verde del texto nuevo */
+    color: #15803d; 
+}
+
+/* --- LA MAGIA: Cuando pasas el mouse sobre la TARJETA (.problem-visual-card) --- */
+
+/* Cambia el fondo del badge a VERDE */
+.problem-visual-card:hover .problem-stat {
+    background: #DCFCE7; /* Fondo Verde Claro */
+    color: transparent;  /* Hacemos invisible el texto rojo original */
+}
+
+/* Muestra el texto alternativo VERDE */
+.problem-visual-card:hover .problem-stat::after {
+    opacity: 1;
+    transform: translateY(0);
+}
